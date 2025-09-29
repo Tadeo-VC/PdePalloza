@@ -1,0 +1,45 @@
+@startuml DiagramaDeClases-PdePalloza
+
+abstract class Artista {
+    + nombre
+    + nacionalidad
+    + añosDeTrayectoria
+    + cantidadDeIntegrantes
+    + reconocimiento
+    + genero 
+    + presentarse()
+    + laVaARomper()
+    + cuantaGenteAtrae()
+    {abstract} + improntaNacional()
+}
+
+Artista -up-> Genero
+
+class ArtistaArgentino extends Artista {
+    improntaNacional()
+}
+class ArtistaUruguayo extends Artista {
+    improntaNacional()
+}
+
+interface Genero {
+    + popularidad()
+    + energia(unArtista)
+}
+
+class Rock {} 
+class Trap {}
+class Funk {} 
+
+Rock .down.|> Genero
+Trap .down.|> Genero 
+Funk .down.|> Genero 
+
+class PdePalloza {
+    + artistas
+    + vaASerUnExito()
+}
+
+PdePalloza -left->"*" Artista
+
+@enduml
