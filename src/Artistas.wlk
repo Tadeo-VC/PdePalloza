@@ -1,3 +1,4 @@
+import src.ExceptionEnergiaIncalculable.*
 import Generos.*
 
 class Artista {
@@ -12,7 +13,7 @@ class Artista {
     method laVanARomper() {
         try {
             return reconocimiento > 70 && aniosDeTrayectoria > 10 && genero.energia(self)
-        } catch e: Exception {
+        } catch e: ExceptionEnergiaIncalculable {
             return true
         }
     }

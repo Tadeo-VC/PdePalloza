@@ -1,3 +1,4 @@
+import src.ExceptionEnergiaIncalculable.*
 object rock {
     method popularidad() = 8
 
@@ -14,7 +15,7 @@ object trap {
 
     method energia(unArtista) {
         if(unArtista.getNombre() == "ModoDiablo") {
-            return throw new Exception(message = "la energia es demasiado grande")
+            return throw new ExceptionEnergiaIncalculable(message = "la energia es demasiado grande")
         } else {
             return 8
         }
