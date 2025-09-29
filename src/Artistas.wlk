@@ -9,7 +9,13 @@ class Artista {
 
     method presentarse() = nombre ++ genero.nombreDelGenero()
 
-    method laVanARomper() = reconocimiento > 70 && aniosDeTrayectoria > 10 && genero.energia(self)
+    method laVanARomper() {
+        try {
+            return reconocimiento > 70 && aniosDeTrayectoria > 10 && genero.energia(self)
+        } catch e: Exception {
+            return true
+        }
+    }
 
     method cuantaGenteAtrae() = reconocimiento * genero.popularidad() * self.improntaNacional()
 

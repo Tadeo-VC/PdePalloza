@@ -14,7 +14,7 @@ object trap {
 
     method energia(unArtista) {
         if(unArtista.getNombre() == "ModoDiablo") {
-            return 10
+            return throw new Exception(message = "la energia es demasiado grande")
         } else {
             return 8
         }
